@@ -1,137 +1,221 @@
-<!DOCTYPE html>
-<html class="no-js" lang="en">
+﻿<!DOCTYPE html>
+<html>
     <head>
-        <title>Nicholas Tran - Portfolio</title>
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <!-- CSS taken from bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        // Load Charts and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
-        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="src/css/bootstrap.css">
-        <link rel="stylesheet" href="src/css/styles.css">
-		<style type="text/css">
-		
-		</style>
+        // Draw the pie chart for Sarah's pizza when Charts is loaded.
+        google.charts.setOnLoadCallback(drawSarahChart);
+
+        // Draw the pie chart for the Anthony's pizza when Charts is loaded.
+        google.charts.setOnLoadCallback(drawAnthonyChart);
+
+        // Callback that draws the pie chart for Sarah's pizza.
+        function drawSarahChart() {
+
+            // Create the data table for Sarah's pizza.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Encounter');
+            data.addColumn('number', 'Occurances');
+            data.addRows([
+            ['3 or more encounters', 3],
+            ['2 or less encounters', 4],
+            ['No encounters', 2],
+            ]);
+
+            // Set options for Sarah's pie chart.
+            var options = {title:'Number of Encounters with a 419 Scam',
+                        width:400,
+                        height:300};
+
+            // Instantiate and draw the chart for Sarah's pizza.
+            var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+            chart.draw(data, options);
+        }
+
+        // Callback that draws the pie chart for Anthony's pizza.
+        function drawAnthonyChart() {
+
+            // Create the data table for Anthony's pizza.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Method');
+            data.addColumn('number', 'Occurances');
+            data.addRows([
+            ['Social Media', 1],
+            ['Text', 2],
+            ['Letter', 0],
+            ['Email', 4],
+            ['No contacts', 2]
+            ]);
+
+            // Set options for Anthony's pie chart.
+            var options = {title:'Method of contact for encounters',
+                        width:400,
+                        height:300};
+
+            // Instantiate and draw the chart for Anthony's pizza.
+            var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
+            chart.draw(data, options);
+        }
+        </script>
+        <!-- All of charts code taken from google charts -->
+        <title>Index</title>
     </head>
-
     <body>
-	
-		<div class="container">
-			
-				<div class="jumbotron">
-				<h1 class="display-4">Simple. Elegant. Awesome.</h1>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="banner">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="nav-item nav-link" href="#About">About</a>
+                    <a class="nav-item nav-link" href="#419">The 419 Scam</a>
+                    <a class="nav-item nav-link" href="#Evolution">Evolution of the Scam</a>
+                    <a class="nav-item nav-link" href="#Signs">Signs of the Scam</a>
+                    <a class="nav-item nav-link" href="#Stats">Statistics</a>
+                    <a class="nav-item nav-link" href="#Prevention">Prevention</a>
+                </div>
+            </nav>
+            <div class="vid">
+                <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/Ge6dP6YZfsQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <!-- Video taken from Youtube Channel: The Modern Rogue -->
+            </div>
+        </div>
+        <div class="parallax2">
+            <div id="About">
+                <div class="title">
+                    <h1>About</h1>
+                </div>
+                    <div class="content">
+                        <p>A scam is a fraudulent scheme that aims obtain money or something else of value. Scams target people of all backgrounds, ages and income levels. They can take many forms; it can be online or offline, buying or selling, fake charities and even dating & romance (ACCC, 2017). Some of the most common online scams include phishing scams, imposter scams, scareware scams and advanced fee scams (Norton, n.d.).  A phishing scam are usually done through emails in which they try to trick the victim into visiting a fraudulent website that requires them to enter sensitive information such as bank details. Imposter scams are when the scammer pretends to be a friend or relative of the victim who is in need of money desperately. Scareware scams are when the victim is tricked into thinking that their computer or device is infected with a virus and need to pay for fake antivirus software to remove it. 419 scams are advanced fee fraud scams in which the scammer tries to get the victim to pay an advanced fee in promise for a large payout in the future.
+                                To see more types of scams, click <a href="https://www.scamwatch.gov.au/types-of-scams">here</a>. Millions of dollars are lost every year due to scams. In 2017, it was estimated that $90,928,622 was lost through scams in Australia alone (ACCC, 2017). If something is too good to be true, it usually is.
+                        </p>
+                    </div>
+                        <div class="scams">
+                            <img class="images"src="https://3b6xlt3iddqmuq5vy2w0s5d3-wpengine.netdna-ssl.com/state-of-security/wp-content/uploads/sites/3/part-4.jpg">
+                            <!-- Image from www.tripwire.com -->
+                            <img class="images"src="https://i1.wp.com/www.markdigital.com/wp-content/uploads/2017/04/scam.png">
+                            <!-- Image from www.markdigital.com -->
+                        </div>
+            </div>
+        </div>
+        <div class="parallax">
+            <div id="419" class="scroll">
+                <h1 class="title">The 419 Scam</h1>
+                    <div class ="content">
+                        <p>The ‘Nigerian Letter’ scam or ‘419 Scams’, a reference to the Nigerian Penal code designed to deal with them (Investopedia, 2005), is a common confidence scam or fraud in which the scammer tricks the victim into sending money to them. 419 scams are advanced fee scams which aim to convince their victims into sending them money with the promise of getting a large sum back in the future. Email, letter, text message or social media are all common forms in which scammers will attempt to contact the victim (ACCC, 2015). The scams usually begin with an elaborate story about how they have large amounts of money trapped in banks due to events such as wars or that they have a large inheritance that is “difficult to access” because of taxes or government restrictions (ACCC, 2015).  The scammer will then promise a large sum of money in the future in exchange for helping them transfer their personal fortune out of the country. The fraudster then asks for a small up-front payment in which they require to obtain or transfer their fortune. Once the victim transfers their money to the scammer, they then disappear, along with the victim’s money.
+                        <br> <br>
+                        Although the 419 scam is nicknamed the ‘Nigerian Prince Scam’ or ‘Nigerian Letter Scam’, not all of the scammers originate from there.  It was given that nickname as many of the letters sent are postmarked from Nigeria (Mikkelson, 2010). However, the origins of the scam is widely debated, with some suggesting it started in Nigeria during the 1970s, while  others suggest its origins dated back hundreds of years (Investopedia, 2005). With the emergence and widespread of communication technology such as emails, texting or even calling (Balzarotti et al., 2014), scammers are now able to reach their targets faster than ever. 
+                        </p>
+                    </div>
+                    <div class="scams">
+                        <img class="images2"src="https://www.motherjones.com/wp-content/uploads/dear-beloved_0.png">
+                        <!-- Image from www.motherjones.com -->
+                        <img class="images3"src="https://i.imgur.com/BnJm7S5.png">
+                        <!-- Image from www.imgur.com -->
+                    </div>
+            </div>
+        </div>
+        <div class="parallax2">
+            <div id="Evolution">
+                <h1 class="title">Evolution of the 419 Scam</h1>
+                    <div class="content">
+                        <p>As the 419 scam evolved over the years from faxing and sending letters to calling and emailing, the exact origin of this scam remains a mystery. One popular theory is that it originated in the 19th century in Europe, known as the Spanish Prisoner fraud (Engber, 2017). The Spanish Prisoner fraud consisted of the scammer claiming to be a prisoner who knows where some buried treasure is located. The “prisoner” would ask for money to bribe the prison guards so that they could escape and retrieve the treasure. In return for the money, treasure would be promised to the victim. However, in reality, the “prisoner” was not in jail and was using the story as a way to scam their prey. 
+                        </p>
+                        <h3 class="subtitle">Modern Variations</h3>
+                        <p>One modern variation of the 419 scam is the “Nigerian Romance” scam, which combines romance scams and the 419 scam. This variation of the scam “preys upon the loneliness of online singles, the majority of whom are over 40, divorced or widowed, in order to lure them into a complicated scheme that begins with declarations of love, but soon shifts to requests for money to help overcome financial emergencies. (O’Neil, 2018).”
+                        </p>
+                        <p>
+                        Another variation is the lottery scam in which the victim is notified, usually through email, text or letter, of their lottery win, although they have not entered any. The prize that they have ‘won’ would be anything from a free holiday or car to money from a international lottery (ACCC, 2015). To claim the prize, they would be asked to pay a fee, which scammers would often use excuses such as for insurance costs, government taxes or or bank fees (ACCC, 2015).
+                        </p>
+                        <p>
+                        Aside from scamming for money, fraudsters have started to scam for gift cards such as iTunes or Google Play. This scam involves the trickster impersonating the victim’s employer, usually the CEO, to ask them urgently to purchase gift cards for a client (BarrieToday, 2018). Once the giftcards are sent, the "CEO" disappears, leaving the victim confused and out of their money.
+                        </p>
+                        <p>
+                        The common aspects between the variations of the scams are usually the medium in which it is delivered (email, text, letter) and the scam of promising the victim something in the future in return for payment now. These modern scams are usually a hybrid or combination of other scams such as phishing. 
+                        </p>
 
-				<p class="lead">
-				</p>
-			</div>
-			<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
-				<a class="navbar-brand" href="#">Nicholas Tran - Deco3850</a>
-				
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">About</a>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown">
-								Products
-							</a>
-							<div class="dropdown-menu">
-								<a class="dropdown-item" href="#">Product 1</a>
-								<a class="dropdown-item" href="#">Product 2</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Another Product</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Team</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<div class="embed-responsive embed-responsive-16by9">
-			  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-			</div>
-			<div class="row">
-				<div class="col-sm-12 col-md-4">
-					<div class="card mb-4">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title</p>
-							<a href="#" class="card-link">Another link</a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title</p>
-							<a href="#" class="card-link">Another link</a>
-						</div>
-					</div>
-				</div>
-				<div class="col">
-					<div class="card">
-						<div class="card-body text-center">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">Some quick example text to build on the card title</p>
-							<a href="#" class="card-link">Another link</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		<div class="row mt-sm-4 mt-md-0">
-			<div class="col-sm-12 col-md-8">
-				<h3>An important heading</h3>
-				<p class="lead">A sort of important subheading can go here, which is larger and gray.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			</div>
-
-			<div class="col-sm-12 col-md-4">
-				<h3 class="mb-4">Secondary Menu</h3>
-
-				<ul class="nav flex-column nav-pills">
-					<li class="nav-item">
-						<a class="nav-link active" href="#">Active</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Link</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li>
-				</ul>
-				
-		</div>
-		<div class="row mt-sm-4 mt-md-0">
-			<div class="col-sm-12 col-md-8">
-				<h3>An important heading</h3>
-				<p class="lead">A sort of important subheading can go here, which is larger and gray.</p>
-
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-			</div>
-</div>
-			
-		</div>
-	
-        <script src="src/js/jquery.min.js"></script>
-        <script src="src/js/popper.min.js"></script>
-        <script src="src/js/bootstrap.min.js"></script>
+                </div>
+            </div>
+        </div>
+        <div class="parallax">
+                <div id="Signs">
+                    <h1 class="title">Signs of the Scam</h1>
+                        <div class="content">
+                        <p>The easiest indication of a 419 scam or any scam in general is that if something is too good to be true, there is a reason why. The <a href="https://www.scamwatch.gov.au/types-of-scams/unexpected-winnings/unexpected-prize-lottery-scams">Australian Competition and Consumer Commission</a> has a list of common warning signs in regards to Nigerian scams: 
+                        </p>
+                        <ul>
+                            <li>You receive a contact out of the blue asking you to 'help' someone from another country transfer money out of their country (e.g.  Nigeria, Sierra Leone or Iraq).</li><br>
+                            <li>The request includes a long and often sad story about why the money cannot be transferred by the owner. This typically involves some type of conflict or inheritance and they may want to move the money straight into your account.</li><br>
+                            <li>You are offered a financial reward, such as a share in the amount, for helping them access their 'trapped' funds. The amount of money to be transferred, and the payment that the scammer promises to you if you help, is usually very large.</li><br>
+                            <li>They will claim that a bank, lawyer, government agency or other organisation requires some fees to be paid before the money can be moved. The scammer will often ask you to make payments for the fee via a money transfer service.</li>
+                        </ul>
+                        <br>
+                        <p>Other signs include:</p>
+                        <ul>
+                            <li>Poor grammar and spelling is often seen in the first point of contact. However, it can also be intentional, as it helps self-select the gullible people who may fall victim to their scams (Herley, 2012) as the people who recognise the scam would avoid it. Incorrectly spelt words also help avoid spam filters as it reduces the chance of detection.</li><br>
+                            <li>The non-use of the individual's name such as "Dear user, friend or account holder"</li>
+                        </ul>
+                        </div>
+                </div>
+        </div>
+        <div class="parallax2">
+            <div id="Stats" class="charts">
+                 <h1 class="title">Statistics</h1>
+                 <div class="content">
+                    <p>Every year, millions are lost to scammers. In 2017, $1,665,373 was scammed from Australians by Nigerian scams (ACCC, 2017). This is just the reported amount as there are a large amount of scams left unreported. These scams are difficult to prosecute as the victims feel embarrassed about being scammed, thus don’t report it. Furthermore, as the scammers are usually overseas it becomes harder to prosecute them.
+                        </p>
+                    <div class="content">
+                    <table class="columns">
+                        <tr>
+                            <td><div id="Sarah_chart_div" style="border: 1px solid #ccc"></div><p>Encounter refers to any contact of a 419 scam, not necessarily falling for one</p></td>
+                            <td><div id="Anthony_chart_div" style="border: 1px solid #ccc"></div><p>How the person was contacted by the scammer</p></td>  
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="parallax">
+                <div id="Prevention">
+                     <h1 class="title">Prevention and Avoidance</h1>
+                     <div class="content">
+                        <p>The easiest way to prevent and avoid these scams are to do your own research, think logically and be skeptical. The signs of a scam are usually obvious and are in plain sight. If you haven’t entered a competition, how can you win it? How likely are you to have a family member in that particular foreign country? Always verify the identity of the contact whether it be through calling or an online search. Avoid anything that requests payment via money order, wire transfer, international funds transfer, pre-loaded card or electronic currency like Bitcoin (ACCC 2015). If you are unsure of something, do an online search as there is a high chance that someone else has come across the same thing. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <!-- Source code for button taken from CodyHouse.co -->
+        <a href="#0" class="cd-top js-cd-top">Top</a>
+        <footer class="reffooter">
+            <div class="contentref ">
+                <h4 class="subtitle">References</h4>
+                <p class="references">BarrieToday, S. (2018, May 30). Got an unusual request from your employer? It may be a scam. Retrieved October 18, 2018, from https://www.barrietoday.com/police-beat/got-an-unusual-request-from-your-employer-it-may-be-a-scam-939335 <br>
+                        Better Business Bureaus, B. B. B. B. B. (n.d.). The Nigerian Prince: Old Scam, New Twist. Retrieved October 18, 2018, from http://www.bbb.org/new-york-city/get-consumer-help/articles/the-nigerian-prince-old-scam-new-twist/ <br>
+                        Commission, A. C. and C. (2015a, May 14). Nigerian scams [Text]. Retrieved October 18, 2018, from https://www.scamwatch.gov.au/types-of-scams/unexpected-money/nigerian-scams <br>
+                        Commission, A. C. and C. (2015b, May 14). Unexpected prize & lottery scams [Text]. Retrieved October 18, 2018, from https://www.scamwatch.gov.au/types-of-scams/unexpected-winnings/unexpected-prize-lottery-scams <br>
+                        Commission, A. C. and C. (2016, March 11). Scam statistics [Text]. Retrieved October 18, 2018, from https://www.scamwatch.gov.au/about-scamwatch/scam-statistics <br>
+                        Engber, D. (2017, December 20). Who Made That Nigerian Scam? The New York Times. Retrieved from https://www.nytimes.com/2014/01/05/magazine/who-made-that-nigerian-scam.html <br>
+                        Herley, C. (2012). Why Do Nigerian Scammers Say They are From Nigeria? WEIS. Retrieved from https://www.microsoft.com/en-us/research/publication/why-do-nigerian-scammers-say-they-are-from-nigeria/ <br>
+                        Investopedia, I. (2005, October 26). Nigerian Scam. Retrieved October 18, 2018, from https://www.investopedia.com/terms/n/nigerianscam.asp <br>
+                        Isacenkova, J., Thonnard, O., Costin, A., Francillon, A., & Balzarotti, D. (2014). Inside the scam jungle: a closer look at 419 scam email operations. EURASIP Journal on Information Security, 2014(1), 4. https://doi.org/10.1186/1687-417X-2014-4 <br>
+                        Keith. (n.d.). Learn The Language Of The Scam.html. Retrieved October 18, 2018, from https://www.scambusters.org/scamlanguage.html <br>
+                        Marshall, E. (n.d.). Nigerian Prince scams are still making millions for criminals. Retrieved October 18, 2018, from https://www.mailguard.com.au/blog/nigerian-prince-millions <br>
+                        McAndrew, F. T. (n.d.). Why “Nigerian Prince” scams continue to dupe us. Retrieved October 18, 2018, from http://theconversation.com/why-nigerian-prince-scams-continue-to-dupe-us-98232 <br>
+                        Mikkelson, B. (2010, August 4). FACT CHECK: Nigerian (419) Scam. Retrieved October 18, 2018, from https://www.snopes.com/fact-check/nigerian-scam-2/ <br>
+                        Norton, N. (n.d.). Online Scams. Retrieved October 18, 2018, from https://au.norton.com/internetsecurity-online-scams.html <br>
+                        O’Neil, L. (2018, May 3). Am I the Face of a Nigerian Online Romance Scammer? Retrieved October 18, 2018, from https://medium.com/@lukeoneil47/am-i-the-face-of-a-nigerian-online-romance-scammer-2278bcfd1da5 <br>
+                        Whatismyipaddress, W. (n.d.). Nigerian Prince Email Scam Resource Center. Retrieved October 18, 2018, from https://whatismyipaddress.com/419-scam
+                </p>
+             </div>
+        </footer>
     </body>
+    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>
